@@ -52,7 +52,7 @@ public class Sort
       int least = index;
       for (int index2 = index + 1; index2 < words.size(); index2++)
       {
-        if (words.get(index2).compareTo(words.get(index)) > 0)
+        if (words.get(index2).compareTo(words.get(index)) < 0)
         {
           least = index2;
         }
@@ -62,7 +62,7 @@ public class Sort
       words.set(index, words.get(least));
       words.set(least, stuff);
     }
-    System.out.println("Iterations: " + count);
+    System.out.println("Selection Sort Iterations: " + count);
   }
 
   // Part C.  Sorting a 1000-word list!
@@ -73,14 +73,14 @@ public class Sort
     {
       String temp = words.get(index);
       int maybe = index;
-      while (maybe > 0 && temp.compareTo(words.get(index - 1)) > 0)
+      while (maybe > 0 && temp.compareTo(words.get(index - 1)) < 0)
       {
-        words.set(index, words.get(index - 1));
-        maybe --;
-        count ++;
+        words.set(maybe, words.get(maybe - 1));
+        maybe--;
+        count++;
       }
       words.set(maybe, temp);
     }
-    System.out.println("Iterations: " + count);
+    System.out.println("Insertion Sort Iterations: " + count);
   }
 }
