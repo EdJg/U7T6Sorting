@@ -52,11 +52,10 @@ public class Sort
       int least = index;
       for (int index2 = index + 1; index2 < words.size(); index2++)
       {
-        if (words.get(index2).compareTo(words.get(index)) > 0)
-        {
+        count++;
+        if (words.get(index2).compareTo(words.get(least)) < 0) {
           least = index2;
         }
-        count++;
       }
       String stuff = words.get(index);
       words.set(index, words.get(least));
@@ -73,7 +72,7 @@ public class Sort
     {
       String temp = words.get(index);
       int maybe = index;
-      while (maybe > 0 && temp.compareTo(words.get(index - 1)) > 0)
+      while (maybe > 0 && temp.compareTo(words.get(maybe - 1)) < 0)
       {
         words.set(index, words.get(index - 1));
         maybe --;
